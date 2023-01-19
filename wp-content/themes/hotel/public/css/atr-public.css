@@ -1,3 +1,9 @@
+h1, h2, h3, h4 {
+  font-family: 'Darker Grotesque', sans-serif; }
+
+p {
+  font-family: 'Raleway', sans-serif; }
+
 .bg-color-container {
   background-color: #000; }
   .bg-color-container #navbarNavDropdown {
@@ -40,5 +46,39 @@
           color: #fff;
           font-size: 28px;
           text-align: center; }
+
+.home #sliderHome .carousel-item {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  min-height: 90vh; }
+  .home #sliderHome .carousel-item::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 90vh;
+    background-color: rgba(0, 0, 0, 0.3); }
+    @media screen and (max-width: 992px) {
+      .home #sliderHome .carousel-item::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 550px;
+        background-color: rgba(0, 0, 0, 0.3); } }
+  @media screen and (max-width: 992px) {
+    .home #sliderHome .carousel-item {
+      min-height: 550px; } }
+.home .container-text-bienvenida .row h1 {
+  font-size: 47px;
+  margin: 32px 0px; }
+.home .container-text-bienvenida .row p {
+  font-size: 22px; }
+
+.row-divider {
+  padding: 40px 0; }
+  .row-divider .divider {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid #cccccc8c; }
 
 /*# sourceMappingURL=atr-public.css.map */

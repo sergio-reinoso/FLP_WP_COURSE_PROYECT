@@ -1,4 +1,12 @@
 @import 'variables';
+@import 'mixins';
+
+h1,h2,h3,h4{
+    font-family: 'Darker Grotesque', sans-serif;
+}
+p{
+    font-family: 'Raleway', sans-serif;
+}
 
 .bg-color-container{
     background-color: $color_menu;
@@ -61,3 +69,51 @@
     }
 }
 
+//Codigo proyecto
+.home {
+    #sliderHome{
+        .carousel-item{
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            min-height: 90vh;
+            &::after{
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 90vh;
+                background-color: rgba($color: #000000, $alpha: 0.3);
+                @include breakpoint-max-width(lg){
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 550px;
+                    background-color: rgba(0,0,0,0.3);
+                }
+            }
+            @include breakpoint-max-width(lg){
+                min-height: 550px;
+            }
+        }
+    }
+    .container-text-bienvenida{
+        .row {
+            h1{
+                font-size: 47px;
+                margin: 32px 0px;
+            }
+            p{
+                font-size: 22px;
+            }
+        }
+    }
+}
+
+.row-divider {
+    padding: 40px 0;
+    .divider{
+        display: flex;
+        width: 100%;
+        border-bottom: 1px solid #cccccc8c;
+    }
+}

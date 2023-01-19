@@ -58,6 +58,15 @@ class ATR_Public {
             '5.15.4', 
             'all'
         );
+
+        //Fuentes Google Fonts
+        wp_enqueue_style(
+            'fonts',
+            'https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@600&family=Raleway:wght@200&display=swap',
+            array(),
+            '1.0.0',
+            'all'
+        );
     
     }
 

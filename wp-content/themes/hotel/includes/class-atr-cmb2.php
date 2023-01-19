@@ -37,6 +37,37 @@ class ATR_CMB2{
             ),
         ));
 
+        //Metacampo texto de bienvenida
+        $cmb->add_field(array(
+            'name'    => 'Texto de bienvenida',
+            'desc'    => 'Aqui escribiremos un texto de bienvenida para los visitantes',
+            'id'      => 'texto_bienvenida',
+            'type'    => 'wysiwyg',
+            'options' => array(),
+        ));
+
+        //Metacampo imagen sobre nosotros
+        $cmb->add_field(array(
+            'name'    => 'Imagen sobre nosotros',
+            'desc'    => 'Aqui subiremos la imagen del bloque sobre nosotros',
+            'id'      => 'imagen sobre nosotros',
+            'type'    => 'file',
+            'options' => array(
+                'url' => false, // Hide the text input for the url
+            ),
+            'text'    => array(
+                'add_upload_file_text' => 'Añadir imagen'
+            ),
+            'query_args' => array(
+                'type' => array(
+                	'image/gif',
+                	'image/jpeg',
+                	'image/png',
+                ),
+            ),
+            'preview_size' => 'medium', // Image size to use when previewing in the admin.
+        ));
+
     }
 
 }
