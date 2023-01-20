@@ -67,6 +67,18 @@ class ATR_Public {
             '1.0.0',
             'all'
         );
+
+        /**
+         * Libreria Fancybox 4.0
+         * https://fancyapps.com/docs/ui/installation/
+         */
+        wp_enqueue_style(
+            'fancybox',
+            ATR_DIR_URI . 'helpers/fancybox-4/css/fancybox.css',
+            array(),
+            '4.0',
+            'all'
+        );
     
     }
 
@@ -121,6 +133,18 @@ class ATR_Public {
             array(), 
             '5.3.1', 
             true 
+        );
+
+        /**
+         * Libreria Fancybox 4.0
+         * https://fancyapps.com/docs/ui/installation/
+         */
+        wp_enqueue_script(
+            'fancybox',
+            ATR_DIR_URI . 'helpers/fancybox-4/js/fancybox.umb.js',
+            array(),
+            '4.0',
+            true
         );
     
     }
