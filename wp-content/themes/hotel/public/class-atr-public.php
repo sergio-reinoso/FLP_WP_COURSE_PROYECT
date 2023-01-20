@@ -143,7 +143,7 @@ class ATR_Public {
             'fancybox',
             ATR_DIR_URI . 'helpers/fancybox-4/js/fancybox.umb.js',
             array(),
-            '4.0',
+            '4.0.31',
             true
         );
     
@@ -214,7 +214,6 @@ class ATR_Public {
 
     public function atr_pagination_post($data){
 
-        
         //paginación para el custom post type
         $big = 9999999;
 
@@ -244,7 +243,5 @@ class ATR_Public {
         $resultado = 3*3;
         return $resultado;
     }
-
-
 
 }

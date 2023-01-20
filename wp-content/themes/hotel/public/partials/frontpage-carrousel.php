@@ -24,7 +24,7 @@ $images = get_post_meta(get_the_ID(), 'img_list_carrousel', true);
             
         ?>
         <div class="carousel-item active">
-            <img src="..." class="d-block w-100" alt="...">
+            <img src="" class="d-block w-100" alt="">
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#sliderHome" data-bs-slide="prev">

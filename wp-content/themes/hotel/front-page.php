@@ -42,5 +42,10 @@
     <?php get_template_part('public/partials/frontpage','galeria'); ?>
 </div>
 
+<div class="container-fluid container-experiencias">
+    <div class="container">
+        <?php get_template_part('public/partials/frontpage','experiencias'); ?>
+    </div>
+</div>
 
 <?php get_footer(); ?>
