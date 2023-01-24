@@ -17,7 +17,8 @@ p {
   background-color: #000; }
   .footer .text-footer p {
     text-align: center;
-    color: #fff; }
+    color: #fff;
+    margin: 0; }
   .footer .logo-footer {
     display: flex;
     justify-content: center;
@@ -126,6 +127,92 @@ p {
 .home .block-gallery-text .texto {
   text-align: center;
   font-size: 22px; }
+.home .container-experiencias {
+  background-color: #f9f9f9; }
+  .home .container-experiencias .title-section {
+    display: flex;
+    justify-content: center; }
+    .home .container-experiencias .title-section p {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
+  .home .container-experiencias .title-page h2 {
+    text-align: center; }
+  .home .container-experiencias .class-button-page {
+    display: flex;
+    justify-content: center; }
+  .home .container-experiencias .imagen {
+    padding: 0; }
+  .home .container-experiencias .texto {
+    background-color: white;
+    padding: 40px;
+    text-align: justify; }
+  .home .container-experiencias .seccion_01 {
+    padding-top: 60px;
+    justify-content: center; }
+  .home .container-experiencias .seccion_02 {
+    padding-bottom: 60px;
+    justify-content: center; }
+    .home .container-experiencias .seccion_02 .imagen {
+      order: 1; }
+    .home .container-experiencias .seccion_02 .texto {
+      order: 2; }
+.home .container-parallax {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }
+  .home .container-parallax::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.5); }
+  .home .container-parallax .container {
+    position: relative;
+    height: 100%; }
+    .home .container-parallax .container .row {
+      display: flex;
+      justify-content: center;
+      height: 100%; }
+      .home .container-parallax .container .row .texto {
+        text-align: center;
+        color: white; }
+        .home .container-parallax .container .row .texto p {
+          font-weight: bold; }
+      .home .container-parallax .container .row .col-parallax {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; }
+.home .container-ubicacion .col-ubicacion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .home .container-ubicacion .col-ubicacion span {
+    color: #0d6efd !important; }
+  @media screen and (max-width: 768px) {
+    .home .container-ubicacion .col-ubicacion {
+      margin-bottom: 20px;
+      display: grid; } }
+.home .map iframe {
+  width: 100%;
+  height: 400px; }
+.home .container-newsletter .col-text {
+  text-align: center; }
+.home .container-newsletter .form-email input[type="email"] {
+  height: 60px;
+  border-radius: 0px; }
+  .home .container-newsletter .form-email input[type="email"]:focus {
+    border-color: #5f5f32;
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 8px #5f5f32;
+    outline: 0 none; }
+.home .container-newsletter .btn-outline-primary {
+  background-color: #000000;
+  border-color: #000000;
+  color: #fff; }
+  .home .container-newsletter .btn-outline-primary:hover {
+    color: #e4a021; }
 
 .boton-reserva {
   display: flex;
@@ -148,5 +235,34 @@ p {
     display: flex;
     width: 100%;
     border-bottom: 1px solid #cccccc8c; }
+
+.class-button-page .btn-outline-primary {
+  color: #e4a021;
+  border-color: #e4a021; }
+  .class-button-page .btn-outline-primary:hover {
+    background-color: #e4a021;
+    border-color: #e4a021;
+    color: #fff; }
+  .class-button-page .btn-outline-primary:focus {
+    border-color: #5f5f32;
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 8px #5f5f32;
+    outline: 0; }
+
+.top-header .header-top-imagen {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 400px;
+  position: relative; }
+  .top-header .header-top-imagen::after {
+    content: '';
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 400px; }
+  .top-header .header-top-imagen h1 {
+    text-align: center;
+    color: white;
+    z-index: 2; }
 
 /*# sourceMappingURL=atr-public.css.map */

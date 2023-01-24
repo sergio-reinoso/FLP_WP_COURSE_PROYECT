@@ -76,6 +76,11 @@ class ATR_Master {
          * En esta clase se cargara la libreria CMB2
          */
         require_once ATR_DIR_PATH . 'includes/class-atr-cmb2.php';
+
+        /**
+         * Cargaremos la clase para el ajax newsletter
+         */
+        require_once ATR_DIR_PATH . 'includes/class-atr-ajax-newsletter.php';
         
 
     }
@@ -108,6 +113,7 @@ class ATR_Master {
         $this->atr_metaboxes   	    = new ATR_Metaboxes;
         $this->atr_database   	    = new ATR_Database;
         $this->atr_cmb2   	        = new ATR_CMB2;
+        $this->atr_ajax_newsletter  = new ATR_AjaxNewsletter;
         
     }
 
@@ -134,6 +140,14 @@ class ATR_Master {
 
         //Ganchos CMB2
         $this->cargador->add_action( 'cmb2_admin_init', $this->atr_cmb2, 'atr_cmb2_metaboxes' );
+        $this->cargador->add_action( 'cmb2_admin_init', $this->atr_cmb2, 'atr_cmb2_metaboxes_experiencias');
+
+        //Gancho Ajax
+        $this->cargador->add_action( 'after_setup_theme', $this->atr_ajax_newsletter, 'atr_create_db_newsletter' );
+
+        //Ganchos de accion ajax para usuarios registrados y no registrados
+        $this->cargador->add_action( 'wp_ajax_atr_newsletter', $this->atr_ajax_newsletter, 'atr_newsletter' );
+        $this->cargador->add_action( 'wp_ajax_nopriv_atr_newsletter', $this->atr_ajax_newsletter, 'atr_newsletter');
 
     }
 
@@ -147,7 +161,12 @@ class ATR_Master {
 
         //Registro de sidebars
         $this->cargador->add_action('init', $this->atr_public, 'atr_register_sidebars');
-        
+
+        //Gancho de filtro
+        $this->cargador->add_filter('excerpt_length', $this->atr_public, 'atr_excerpt');
+        $this->cargador->add_filter('excerpt_more', $this->atr_public, 'atr_excerpt_more');
+
+
     }
 
     public function get_theme_name() {

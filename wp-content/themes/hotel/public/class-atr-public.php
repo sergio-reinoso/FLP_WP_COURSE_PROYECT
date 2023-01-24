@@ -146,7 +146,24 @@ class ATR_Public {
             '4.0.31',
             true
         );
-    
+
+        //Creamos el wp_localize_script(), para la newsletter
+        wp_localize_script(
+            'public-js',
+            'newsletter',
+            array(
+                'url' => admin_url('admin-ajax.php')
+            )
+        );
+        
+        //Libreria sweetalert
+        wp_enqueue_script(
+            'sweetalert',
+            ATR_DIR_URI . 'helpers/sweetalert2/sweetalert.min.js',
+            array('jquery'),
+            '2.0',
+            true
+        );   
     }
 
     /**
@@ -242,6 +259,28 @@ class ATR_Public {
     public function atr_suma(){
         $resultado = 3*3;
         return $resultado;
+    }
+
+    /**
+     * Function filter excerpt
+     * Function para limitar el numero de palabras de nuestro contenido
+     * https://developer.wordpress.org/reference/functions/the_excerpt/
+     */
+    public function atr_excerpt($length){
+        
+        return 40;
+
+    }
+
+    /**
+     * Function filter excerpt more
+     * Agregamos al final del contenido un html o simplemente un texto para quitar los corchetes y punto que hace cuando reduce el texto
+     * https://developer.wordpress.org/reference/functions/the_excerpt/
+     */
+    public function atr_excerpt_more($more){
+
+        return '...';
+
     }
 
 }

@@ -110,6 +110,105 @@ class ATR_CMB2{
             'protocols' => array('http', 'https'), // Array of allowed protocols
         ));
 
+        //Metacampo imagen bloque parallax
+        $cmb->add_field(array(
+            'name'    => 'Imagen bloque parallax',
+            'desc'    => 'Aqui subiremos la imagen del bloque parallax',
+            'id'      => 'img_frontpage_parallax_id',
+            'type'    => 'file',
+            'options' => array(
+                'url' => false, // Hide the text input for the url
+            ),
+            'text'    => array(
+                'add_upload_file_text' => 'Añadir imagen'
+            ),
+            'query_args' => array(
+                'type' => array(
+                    'image/gif',
+                    'image/jpeg',
+                    'image/png',
+                ),
+            ),
+            'preview_size' => 'medium', // Image size to use when previewing in the admin.
+        ));
+
+        //Metacampo texto bloque parallax
+        $cmb->add_field(array(
+            'name'    => 'Texto bloque parallax',
+            'desc'    => 'Aqui escribiremos el texto del bloque parallax',
+            'id'      => 'texto_bloque_parallax',
+            'type'    => 'wysiwyg',
+            'options' => array(),
+        ));
+        $cmb->add_field(array(
+            'name'    => __('url de la pagina de Reservas', 'cmb2'),
+            'id'      => 'url_reserva_parallax',
+            'type'    => 'text_url',
+            'protocols' => array( 'http', 'https' )
+        ));
+
+        //Metacampo titulo bloque ubicacion
+        $cmb->add_field(array(
+            'name'    => 'Titulo bloque ubicacion',
+            'desc'    => 'Aqui escribiremos el titulo del bloque ubicacion',
+            'id'      => 'title_block_location',
+            'type'    => 'text'
+        ));
+
+        //Metacampo texto bloque direccion
+        $cmb->add_field(array(
+            'name'    => 'Texto direccion del sitio',
+            'desc'    => 'Agrege aquí la direccion. numero de calle, nombre y ciudad',
+            'id'      => 'direction_block_location',
+            'type'    => 'text',
+        ));
+
+        //Metacampo texto bloque telefono
+        $cmb->add_field(array(
+            'name'    => 'Telefono de contacto',
+            'desc'    => 'Aqui pondremos el telefono de contacto',
+            'id'      => 'tel_block_location',
+            'type'    => 'text',
+        ));
+
+        //Metacampo texto bloque email
+        $cmb->add_field(array(
+            'name'    => 'Email de contacto',
+            'id'      => 'email_block_location',
+            'type'    => 'text_email',
+        ));
+
+        //Metacampo text url bloque ubicacion
+        $cmb->add_field(array(
+            'name' => __('URL iframe', 'cmb2'),
+            'desc' => 'Aqui pondremos la url del iframe de google maps',
+            'id'  => 'url_iframe_block_location',
+            'type' => 'text_url',
+            'protocols' => array('http', 'https') // Array of allowed protocols
+        ));
+
+    }
+
+    public function atr_cmb2_metaboxes_experiencias(){
+
+        $prefix = "template_experiencias_";
+        $cmb = new_cmb2_box( array(
+            'id' => $prefix . 'metabox',
+            'title' => __( 'Ajustes de Pagina', 'cmb2' ),
+            'object_types' => array( 'page', ), // Post type
+            'show_on' => array( 'key' => 'page-template', 'value' => 'page-experiencias.php'),
+            'context' => 'normal',
+            'priority' => 'high',
+            'show_names' => true, // Show field names on the left
+        ));
+
+        $cmb->add_field( array(
+            'name'      => 'Nombre de la seccion',
+            'desc'      => 'Aqui agregaremos el nombre de la seccion que tendra la página',
+            'default'   => '',
+            'id'        => $prefix . 'seccion_text',
+            'type'      => 'text'
+        ));
     }
 
 }

@@ -21,14 +21,14 @@
         <div class="col-sm-12 col-md-6 imagen">
             <?php
 
-                $image = wp_get_attachment_image(
-                    get_post_meta(get_the_ID(), 'imagen_sobre_nosotros_id', 1),
-                    array('300', '300'),
-                    "",
-                    array('class' => 'img-fluid')
-                );
+            $image = wp_get_attachment_image(
+                get_post_meta(get_the_ID(), 'imagen_sobre_nosotros_id', 1),
+                array('300', '300'),
+                "",
+                array('class' => 'img-fluid')
+            );
 
-                echo $image;
+            echo $image;
 
             ?>
         </div>
@@ -39,13 +39,23 @@
 </div>
 
 <div class="container-fluid">
-    <?php get_template_part('public/partials/frontpage','galeria'); ?>
+    <?php get_template_part('public/partials/frontpage', 'galeria'); ?>
 </div>
 
 <div class="container-fluid container-experiencias">
     <div class="container">
-        <?php get_template_part('public/partials/frontpage','experiencias'); ?>
+        <?php get_template_part('public/partials/frontpage', 'experiencias'); ?>
     </div>
 </div>
+
+<!--Bloque parallax-->
+<?php get_template_part('public/partials/frontpage', 'parallax'); ?>
+
+<!--Bloque ubicacion y contacto-->
+<?php get_template_part('public/partials/frontpage', 'ubicacion'); ?>
+
+<!--Bloque newsletter-->
+<?php get_template_part('public/partials/frontpage', 'newsletter'); ?>
+
 
 <?php get_footer(); ?>
