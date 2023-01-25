@@ -16,6 +16,7 @@ class ATR_Master {
         $this->set_idiomas();
         $this->definir_admin_hooks();
         $this->definir_public_hooks();
+        
     }
 
     private function cargar_dependencias() {
@@ -135,12 +136,13 @@ class ATR_Master {
         $this->cargador->add_action( 'init', $this->atr_cpt, 'atr_metadatos_cpt' );
 
         //Gancho para Metaboxes
-        $this->cargador->add_action( 'add_meta_boxes', $this->atr_metaboxes, 'atr_add_caja_personalizada' );
-        $this->cargador->add_action( 'save_post', $this->atr_metaboxes, 'atr_save_metacaja_datos' );
+        // $this->cargador->add_action( 'add_meta_boxes', $this->atr_metaboxes, 'atr_add_caja_personalizada' );
+        // $this->cargador->add_action( 'save_post', $this->atr_metaboxes, 'atr_save_metacaja_datos' );
 
         //Ganchos CMB2
         $this->cargador->add_action( 'cmb2_admin_init', $this->atr_cmb2, 'atr_cmb2_metaboxes' );
-        $this->cargador->add_action( 'cmb2_admin_init', $this->atr_cmb2, 'atr_cmb2_metaboxes_experiencias');
+        $this->cargador->add_action( 'cmb2_admin_init', $this->atr_cmb2, 'atr_cmb2_metaboxes_experiencias' );
+        $this->cargador->add_action( 'cmb2_admin_init', $this->atr_cmb2, 'atr_cmb2_metaboxes_habitaciones' );
 
         //Gancho Ajax
         $this->cargador->add_action( 'after_setup_theme', $this->atr_ajax_newsletter, 'atr_create_db_newsletter' );

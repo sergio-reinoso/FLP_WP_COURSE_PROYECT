@@ -265,4 +265,74 @@ p {
     color: white;
     z-index: 2; }
 
+.page-template-page-habitaciones .col-one-room .imagen {
+  width: 100%;
+  position: relative; }
+  .page-template-page-habitaciones .col-one-room .imagen::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(39, 39, 39, 0.5);
+    position: absolute; }
+  .page-template-page-habitaciones .col-one-room .imagen .starts-rooms {
+    position: absolute;
+    margin-top: -80px;
+    margin-left: 15px; }
+    .page-template-page-habitaciones .col-one-room .imagen .starts-rooms .start {
+      color: #eecf38; }
+    .page-template-page-habitaciones .col-one-room .imagen .starts-rooms .text-name {
+      color: #fff; }
+.page-template-page-habitaciones .col-one-room .contenido {
+  border: 1px solid rgba(212, 212, 212, 0.4);
+  padding: 10px 15px; }
+  .page-template-page-habitaciones .col-one-room .contenido p {
+    color: #585858; }
+  .page-template-page-habitaciones .col-one-room .contenido .row-icons-rooms p {
+    font-size: 10px;
+    font-weight: bold; }
+    .page-template-page-habitaciones .col-one-room .contenido .row-icons-rooms p span {
+      font-size: 14px; }
+  .page-template-page-habitaciones .col-one-room .contenido .rooms-title {
+    text-decoration: none;
+    color: #000000; }
+  .page-template-page-habitaciones .col-one-room .contenido .info-rooms {
+    color: #585858; }
+    .page-template-page-habitaciones .col-one-room .contenido .info-rooms a {
+      color: #585858;
+      text-decoration: none; }
+      .page-template-page-habitaciones .col-one-room .contenido .info-rooms a:hover {
+        text-decoration: underline; }
+  .page-template-page-habitaciones .col-one-room .contenido .row-divider {
+    margin: -10px 0; }
+.page-template-page-habitaciones .paginate-links {
+  display: contents; }
+  .page-template-page-habitaciones .paginate-links .page-numbers {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 7px 10px; }
+  .page-template-page-habitaciones .paginate-links .current {
+    background-color: #e4a021;
+    color: #fff; }
+  .page-template-page-habitaciones .paginate-links .next {
+    border: none; }
+  .page-template-page-habitaciones .paginate-links .prev {
+    border: none; }
+
+@media screen and (max-width: 768px) {
+  #sidebar-blog {
+    margin-bottom: 40px; } }
+#sidebar-blog table caption {
+  text-transform: uppercase;
+  color: #ffa600;
+  font-weight: bold; }
+#sidebar-blog table tr td {
+  background-color: #000000;
+  color: #fff; }
+#sidebar-blog table tr .pad {
+  border: none; }
+#sidebar-blog table tr #today {
+  background-color: #e4a021;
+  color: #fff; }
+#sidebar-blog nav {
+  display: none; }
+
 /*# sourceMappingURL=atr-public.css.map */

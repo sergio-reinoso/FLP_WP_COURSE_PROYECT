@@ -211,4 +211,102 @@ class ATR_CMB2{
         ));
     }
 
+    public function atr_cmb2_metaboxes_habitaciones(){
+
+        $cmb = new_cmb2_box( array(
+            'id'            => 'all_rooms_box',
+            'title'         => __('Ajustes para habitaciones', 'cmb2'),
+            'object_types'  => array('rooms'),
+            'priority'      => 'high',
+            'show_names'    => true
+        ));
+
+        $cmb->add_field( array(
+            'name'      => 'Calificacion',
+            'desc'      => 'Aqui seleccionaremos un numero del 1 al 5 para puntuar las habitaciones',
+            'id'        => 'rooms_calificacion',
+            'type'      => 'select',
+            'show_option_name' => true,
+            'default'   => 'custom',
+            'options_cb' => 'start_select_options'
+        ));
+
+        function start_select_options(){
+            //return a standard array of options
+            return array(
+                'custom' => __('Selecciona tu calificacion', 'hotel'),
+                '1' => 1,
+                '2' => 2,
+                '3' => 3,
+                '4' => 4,
+                '5' => 5
+            );
+        }
+
+        //Campos contenido de habitaciones
+        $prefix = 'page_habitaciones_';
+
+        $cmb->add_field(array(
+            'name' => 'Numero de Opiniones',
+            'desc' => 'Ponga el numero de opiniones que desea mostrar',
+            'id'   => $prefix . 'numero_opiniones',
+            'type' => 'text',
+            'attributes' => array(
+                'type' => 'number',
+                'pattern' => '\d*',
+            ),
+            'sanitization_cb' => 'absint',
+            'escape_cb'       => 'absint',
+        ));
+        $cmb->add_field(array(
+            'name' => 'Numero de huespedes',
+            'desc' => 'Ponga el numero de huespedes que se pueden alojar en la habitacion',
+            'id'   => $prefix . 'numero_huespedes',
+            'type' => 'text',
+            'attributes' => array(
+                'type' => 'number',
+                'pattern' => '\d*',
+            ),
+            'sanitization_cb' => 'absint',
+            'escape_cb'       => 'absint',
+        ));
+        $cmb->add_field(array(
+            'name' => 'Superficie de la habitacion',
+            'desc' => 'Ponga aquí el tamaño de la habitación, ejemplo: 80, este numero se mostrara en metros cuadrados',
+            'id'   => $prefix . 'numbero_superficie',
+            'type' => 'text',
+            'attributes' => array(
+                'type' => 'number',
+                'pattern' => '\d*',
+            ),
+            'sanitization_cb' => 'absint',
+            'escape_cb'       => 'absint',
+        ));
+
+        $cmb->add_field(array(
+            'name'  => 'Precio de la habitacion',
+            'desc'  => 'Agrege aquí el precio de la habitacion',
+            'id'    => $prefix . 'precio_habitacion',
+            'type'  => 'text_money',
+            'before_field' => '$', // Replaces default '$'
+        ));
+
+        //Metacampo para poner una lista de imagenes
+        $cmb->add_field(array(
+            'name'          => 'Imagenes de la habitacion',
+            'desc'          => 'Aquí agregaremos las imagenes de la habitacion',
+            'id'            => $prefix . 'img_list_room',
+            'type'          => 'file_list',
+            'preview_size'  => array(100, 100), //Array por Default
+            'query_args'    => array( 'type' => 'image' ), //Only image attachments
+            'text'          => array(
+                'add_upload_files_text'     => 'Replacement',
+                'remove_image_text'         => 'Replacement',
+                'file_text'                 => 'Replacement',
+                'file_download_text'        => 'Replacement',
+                'remove_text'               => 'Replacement',
+            )
+        ));
+
+    }
 }
