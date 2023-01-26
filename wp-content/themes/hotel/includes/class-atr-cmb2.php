@@ -307,6 +307,35 @@ class ATR_CMB2{
                 'remove_text'               => 'Replacement',
             )
         ));
+    }
 
+    public function atr_cmb2_servicios(){
+
+        $prefix = "template_servicios_";
+
+        $cmb = new_cmb2_box( array(
+            'id'            => $prefix . 'all_services',
+            'title'         => __( 'Ajustes para servicios', 'cmb2' ),
+            'object_types'  => array( 'services', ), // Post type
+            'context'       => 'normal',
+            'priority'      => 'high',
+            'show_names'    => true, // Show field names on the left
+        ));
+
+        $cmb->add_field(array(
+            'name'    => __('url de la pagina', 'cmb2'),
+            'id'      => $prefix . 'url_page',
+            'type'    => 'text_url',
+            'protocols' => array('http', 'https')
+        ));
+
+        $cmb->add_field(array(
+            'name'    => __('url de la ubicacion del sitio', 'cmb2'),
+            'id'      => $prefix . 'url_ubicacion',
+            'type'    => 'text_url',
+            'protocols' => array('http', 'https')
+        )); 
+        
+        
     }
 }

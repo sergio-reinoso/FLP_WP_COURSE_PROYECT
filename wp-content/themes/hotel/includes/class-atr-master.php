@@ -134,6 +134,11 @@ class ATR_Master {
         $this->cargador->add_action( 'init', $this->atr_cpt, 'atr_cpt_habitaciones' );
         $this->cargador->add_action( 'init', $this->atr_cpt, 'atr_taxonomia_habitaciones' );
         $this->cargador->add_action( 'init', $this->atr_cpt, 'atr_metadatos_cpt' );
+        
+        //Ganchos CPT Servicios
+        $this->cargador->add_action('init', $this->atr_cpt, 'atr_cpt_servicios');
+        $this->cargador->add_action('init', $this->atr_cpt, 'atr_taxonomia_servicios');
+
 
         //Gancho para Metaboxes
         // $this->cargador->add_action( 'add_meta_boxes', $this->atr_metaboxes, 'atr_add_caja_personalizada' );
@@ -143,6 +148,8 @@ class ATR_Master {
         $this->cargador->add_action( 'cmb2_admin_init', $this->atr_cmb2, 'atr_cmb2_metaboxes' );
         $this->cargador->add_action( 'cmb2_admin_init', $this->atr_cmb2, 'atr_cmb2_metaboxes_experiencias' );
         $this->cargador->add_action( 'cmb2_admin_init', $this->atr_cmb2, 'atr_cmb2_metaboxes_habitaciones' );
+        $this->cargador->add_action('cmb2_admin_init', $this->atr_cmb2, 'atr_cmb2_servicios');
+
 
         //Gancho Ajax
         $this->cargador->add_action( 'after_setup_theme', $this->atr_ajax_newsletter, 'atr_create_db_newsletter' );

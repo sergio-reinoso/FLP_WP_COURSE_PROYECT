@@ -123,7 +123,6 @@ $rooms = new WP_Query($args);
                         $paginado->atr_pagination_post($rooms);
                     ?>
                 </div>
-
             </div>
 
         </div><!--/col habitaciones-->

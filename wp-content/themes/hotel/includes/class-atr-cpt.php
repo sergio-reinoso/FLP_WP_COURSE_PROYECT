@@ -144,4 +144,97 @@ class ATR_CPT{
 
     }
 
+    public function atr_cpt_servicios(){
+
+        // Etiquetas para el Post Type
+        $labels = array(
+            'name'                => _x('Servicios', 'Post Type General Name', 'hotel'),
+            'singular_name'       => _x('Servicio', 'Post Type Singular Name', 'hotel'),
+            'menu_name'           => __('Servicios', 'hotel'),
+            'parent_item_colon'   => __('Menu Padre', 'hotel'),
+            'all_items'           => __('Todos los Servicios', 'hotel'),
+            'view_item'           => __('Ver Menu', 'hotel'),
+            'add_new_item'        => __('Agregar Nuevo servicio', 'hotel'),
+            'add_new'             => __('Agregar Nuevo servicio', 'hotel'),
+            'edit_item'           => __('Editar servicio', 'hotel'),
+            'update_item'         => __('Actualizar servicio', 'hotel'),
+            'search_items'        => __('Buscar servicio', 'hotel'),
+            'not_found'           => __('No encontrado', 'hotel'),
+            'not_found_in_trash'  => __('No encontrado en la papelera', 'hotel'),
+        );
+
+        // Otras opciones para el post type
+
+        $args = array(
+            'label'               => __('Servicios', 'hotel'),
+            'description'         => __('servicio news and reviews', 'hotel'),
+            'labels'              => $labels,
+            // Todo lo que soporta este post type
+            'supports'            => array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields',),
+            /* Un Post Type hierarchical es como las paginas y puede tener padres e hijos.
+            * Uno sin hierarchical es como los posts
+            */
+            'hierarchical'        => false,
+            'public'              => true,
+            'show_ui'             => true,
+            'show_in_menu'        => true,
+            'show_in_nav_menus'   => true,
+            'show_in_admin_bar'   => true,
+            'menu_position'       => 7,
+            'menu_icon'           => 'dashicons-megaphone',
+            'can_export'          => true,
+            'has_archive'         => true,
+            'exclude_from_search' => false,
+            'publicly_queryable'  => true,
+            'capability_type'     => 'page',
+            //Habilitando la wp rest appi
+            'show_in_rest'          => true,
+            'rest_base'             => 'servicios-appi',
+            'rest_controller_class' => 'WP_REST_Posts_Controller',
+
+        );
+
+        //Por último registramos el post type
+        register_post_type('services', $args);
+
+        flush_rewrite_rules();
+    }
+
+    public function atr_taxonomia_servicios()
+    {
+
+        $post_types = ['services'];
+
+        $labels = array(
+            'name'              => _x('Tipo de servicio', 'taxonomy general name', 'hotel'),
+            'singular_name'     => _x('Tipo de servicio', 'taxonomy singular name', 'hotel'),
+            'search_items'      => __('Buscar Tipo de servicio', 'hotel'),
+            'all_items'         => __('Todos los Tipos de Servicios', 'hotel'),
+            'parent_item'       => __('Tipo de servicio Padre', 'hotel'),
+            'parent_item_colon' => __('Tipo de servicio Padre:', 'hotel'),
+            'edit_item'         => __('Editar Tipo de servicio', 'hotel'),
+            'update_item'       => __('Actualizar Tipo de servicio', 'hotel'),
+            'add_new_item'      => __('Agregar Nuevo Tipo de servicio', 'hotel'),
+            'new_item_name'     => __('Nuevo Tipo de servicio', 'hotel'),
+            'menu_name'         => __('Tipo de servicio', 'hotel'),
+        );
+
+        $args = array(
+            'hierarchical'      => true,
+            'labels'            => $labels,
+            'show_ui'           => true,
+            'show_admin_column' => true,
+            'query_var'         => true,
+            'rewrite' => array('slug' => 'tipo-servicio'),
+            //Campos api rest
+            'show_in_rest'          => true,
+            'rest_base'             => 'tipo-servicio',
+            'rest_controller_class' => 'WP_REST_Terms_Controller',
+
+        );
+
+        register_taxonomy('tipo-servicio', $post_types, $args);
+        
+    }
+
 }

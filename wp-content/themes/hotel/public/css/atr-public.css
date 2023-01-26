@@ -335,4 +335,81 @@ p {
 #sidebar-blog nav {
   display: none; }
 
+.container-rooms .titulos h3 {
+  font-size: 40px; }
+.container-rooms .calificacion .start {
+  color: #eecf38; }
+.container-rooms .calificacion .start_black {
+  color: a1a1a1; }
+.container-rooms .imagen-gallery {
+  position: relative; }
+  .container-rooms .imagen-gallery a .content-number {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 32px;
+    line-height: 50%; }
+    .container-rooms .imagen-gallery a .content-number div {
+      width: 100%;
+      height: 100%; }
+      .container-rooms .imagen-gallery a .content-number div span {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; }
+.container-rooms .row-divider {
+  padding: 18px 0; }
+.container-rooms .row-icons-info .icon-info {
+  font-size: 32px;
+  color: #585858; }
+
+.container-blog .row-blog .blog-image a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  box-shadow: 3px 6px 8px 9px rgba(63, 46, 46, 0.3); }
+.container-blog .row-blog .blog-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .container-blog .row-blog .blog-content .content {
+    box-shadow: 3px 6px 8px 9px rgba(63, 46, 46, 0.3);
+    padding: 20px 20px; }
+    @media (min-width: 1200px) and (max-width: 1399.98px) {
+      .container-blog .row-blog .blog-content .content {
+        height: 300px; } }
+    @media (min-width: 1400px) {
+      .container-blog .row-blog .blog-content .content {
+        height: 300px; } }
+
+.container-servicios .paginate-links {
+  display: contents; }
+  .container-servicios .paginate-links .page-numbers {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 7px 10px; }
+  .container-servicios .paginate-links .current {
+    background-color: #e4a021;
+    color: #fff; }
+  .container-servicios .paginate-links .next {
+    border: none; }
+  .container-servicios .paginate-links .prev {
+    border: none; }
+
+.container-contacto .form-contacto label {
+  width: 100%; }
+.container-contacto .form-contacto input {
+  width: 100%;
+  border: 1px solid rgba(212, 212, 212, 0.8);
+  background-color: rgba(212, 212, 212, 0.3);
+  padding: 5px 0; }
+.container-contacto .form-contacto textarea {
+  width: 100%;
+  border: 1px solid rgba(212, 212, 212, 0.8);
+  background-color: rgba(212, 212, 212, 0.3);
+  padding: 5px 0; }
+.container-contacto .boton-reserva {
+  justify-content: flex-start; }
+
 /*# sourceMappingURL=atr-public.css.map */

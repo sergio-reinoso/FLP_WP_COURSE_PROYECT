@@ -141,7 +141,7 @@ class ATR_Public {
          */
         wp_enqueue_script(
             'fancybox',
-            ATR_DIR_URI . 'helpers/fancybox-4/js/fancybox.umb.js',
+            ATR_DIR_URI . 'helpers/fancybox-4/js/fancybox.umd.js',
             array(),
             '4.0.31',
             true
@@ -163,7 +163,16 @@ class ATR_Public {
             array('jquery'),
             '2.0',
             true
-        );   
+        );
+
+        //Creamos el wp_localize
+        wp_localize_script(
+            'public-js',
+            'contacto',
+            array(
+                'url' => admin_url('admin-ajax.php')
+            )
+        );
     }
 
     /**
