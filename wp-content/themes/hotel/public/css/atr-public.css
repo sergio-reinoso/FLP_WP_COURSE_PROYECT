@@ -412,4 +412,13 @@ p {
 .container-contacto .boton-reserva {
   justify-content: flex-start; }
 
+#sidebar-contacto {
+  padding: 0 20px; }
+  #sidebar-contacto .contenido a {
+    color: #000; }
+
+.map iframe {
+  width: 100%;
+  height: 400px; }
+
 /*# sourceMappingURL=atr-public.css.map */

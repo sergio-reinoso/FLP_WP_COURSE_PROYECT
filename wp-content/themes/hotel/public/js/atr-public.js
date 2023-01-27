@@ -141,16 +141,14 @@ $(document).ready(function(){
                     action: 'atr_form_contacto',
                     tipo: 'contacto',
                     nombre: nombre,
+                    apellido: apellido,
                     email: email,
                     telefono: telefono,
                     mensaje: mensaje,
                     enviado: enviado
                 },
                 success: function( data ){
-
-                    console.log(data);
-                    console.log(data.result);
-
+                    
                     if(data.result){
 
                         //Reset de todos los campos del form
@@ -161,7 +159,7 @@ $(document).ready(function(){
                             text: "Se ha enviado el correo correctamente",
                             icon: "success",
                             timer: 6000
-                        })
+                        });
                     }
                 }
             });

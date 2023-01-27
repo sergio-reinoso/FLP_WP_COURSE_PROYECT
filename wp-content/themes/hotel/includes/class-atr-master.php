@@ -79,9 +79,14 @@ class ATR_Master {
         require_once ATR_DIR_PATH . 'includes/class-atr-cmb2.php';
 
         /**
-         * Cargaremos la clase para el ajax newsletter
+         * Cargaremos la clase para el ajax newsletter del frontend
          */
         require_once ATR_DIR_PATH . 'includes/class-atr-ajax-newsletter.php';
+
+        /**
+         * Cargaremos la clase para el ajax para el formulario dle contacto
+         */
+        require_once ATR_DIR_PATH . 'includes/class-atr-ajax-contacto.php';
         
 
     }
@@ -94,7 +99,7 @@ class ATR_Master {
     }
 
     //Metodo para los widgets
-    public function registro_widgets(){
+    public function atr_registro_widgets(){
 
         register_widget('ATR_Widgets');
 
@@ -115,6 +120,8 @@ class ATR_Master {
         $this->atr_database   	    = new ATR_Database;
         $this->atr_cmb2   	        = new ATR_CMB2;
         $this->atr_ajax_newsletter  = new ATR_AjaxNewsletter;
+        $this->atr_ajax_contacto    = new ATR_AjaxContacto;
+
         
     }
 
@@ -128,7 +135,7 @@ class ATR_Master {
         $this->cargador->add_action( 'admin_menu', $this->atr_admin, 'add_menu' );
 
         //Gancho para widgets
-        //$this->cargador->add_action( 'widgets_init', $this, 'registro_widgets' );
+        $this->cargador->add_action( 'widgets_init', $this, 'atr_registro_widgets' );
 
         //Gancho para CPT
         $this->cargador->add_action( 'init', $this->atr_cpt, 'atr_cpt_habitaciones' );
@@ -148,7 +155,9 @@ class ATR_Master {
         $this->cargador->add_action( 'cmb2_admin_init', $this->atr_cmb2, 'atr_cmb2_metaboxes' );
         $this->cargador->add_action( 'cmb2_admin_init', $this->atr_cmb2, 'atr_cmb2_metaboxes_experiencias' );
         $this->cargador->add_action( 'cmb2_admin_init', $this->atr_cmb2, 'atr_cmb2_metaboxes_habitaciones' );
-        $this->cargador->add_action('cmb2_admin_init', $this->atr_cmb2, 'atr_cmb2_servicios');
+        $this->cargador->add_action( 'cmb2_admin_init', $this->atr_cmb2, 'atr_cmb2_servicios' );
+        $this->cargador->add_action( 'cmb2_admin_init', $this->atr_cmb2, 'atr_cmb2_contacto' );
+        $this->cargador->add_action( 'cmb2_admin_init', $this->atr_cmb2, 'atr_cmb2_reservas' );
 
 
         //Gancho Ajax
@@ -175,6 +184,11 @@ class ATR_Master {
         $this->cargador->add_filter('excerpt_length', $this->atr_public, 'atr_excerpt');
         $this->cargador->add_filter('excerpt_more', $this->atr_public, 'atr_excerpt_more');
 
+        //DB tabla contacto
+        $this->cargador->add_action('after_setup_theme', $this->atr_ajax_contacto, 'atr_create_db_contacto');
+        //Ajax form contacto
+        $this->cargador->add_action('wp_ajax_atr_form_contacto', $this->atr_ajax_contacto, 'atr_form_contacto');
+        $this->cargador->add_action('wp_ajax_nopriv_atr_form_contacto', $this->atr_ajax_contacto, 'atr_form_contacto'); 
 
     }
 

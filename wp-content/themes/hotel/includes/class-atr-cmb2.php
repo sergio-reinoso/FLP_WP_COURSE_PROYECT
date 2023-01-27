@@ -338,4 +338,91 @@ class ATR_CMB2{
         
         
     }
+
+    public function atr_cmb2_contacto(){
+
+        $prefix = "template_contacto_";
+
+        $cmb = new_cmb2_box(array(
+            'id'            => $prefix . 'page_contacto',
+            'title'         => __('Ajustes para el mapa', 'cmb2'),
+            'object_types'  => array('page'), // Post type
+            'show_on'       => array('key' => 'page-template', 'value' => 'page-contacto.php'),
+            'context'       => 'normal',
+            'priority'      => 'high',
+            'show_names'    => true, // Show field names on the left
+        ));
+
+        $cmb->add_field(array(
+            'name'    => 'Titulo del encabezado para el mapa',
+            'desc'    => 'Agrega el titulo del encabezado para el mapa',
+            'default' => 'Encuentranos',
+            'id'      => $prefix . 'seccion_text_title',
+            'type'    => 'text',
+        ));
+
+        $cmb->add_field(array(
+            'name'    => __('URL iframe', 'cmb2'),
+            'desc'    => 'URL del iframe de google maps',
+            'id'      => $prefix . 'map_location',
+            'type'    => 'text_url',
+            'protocols' => array('http', 'https')
+        )); 
+
+    }
+
+    public function atr_cmb2_reservas(){
+
+        $prefix = "template_reservas_";
+        $cmb = new_cmb2_box(array(
+            'id'            => $prefix . 'page_reservas',
+            'title'         => __('Ajustes para la pagina de reservas', 'cmb2'),
+            'object_types'  => array('page'), // Post type
+            'show_on'       => array('key' => 'page-template', 'value' => 'page-reservas.php'),
+            'context'       => 'normal',
+            'priority'      => 'high',
+            'show_names'    => true, // Show field names on the left
+        ));
+
+        //Metacampo titulo
+        $cmb->add_field(array(
+            'name'      => 'Titulo del encabezado para el contenido',
+            'desc'      => 'Agrega el titulo seccion de contenido',
+            'default'   => '',
+            'id'        => $prefix . 'seccion_text_title',
+            'type'      => 'text',
+        ));
+
+        //Metacampo imagen
+        $cmb->add_field(array(
+            'name'  => 'Imagen bloque contenido reservas',
+            'desc'  => 'Imagen del bloque de contenido de reservas',
+            'id'    => $prefix . 'img_contenido',
+            'type'  => 'file',
+            'options' => array(
+                'url' => false, // Texto del input que se muestra en el URL
+            ),
+            'text' => array(
+                'add_upload_file_text' => 'Añadir imagen'
+            ),
+            'query_args' => array(
+                'type' => array(
+                    'image/gif',
+                    'image/jpeg',
+                    'image/png',
+                ),
+            ),
+            'preview_size' => 'medium', // Tamaño de la imagen que se muestra en el admin
+        ));
+
+
+        //Metacampo habitacion
+        $cmb->add_field(array(
+            'name'          => 'Precio habitacion',
+            'desc'          => 'Agrega el precio de la habitacion',
+            'id'            => $prefix . 'precio_habitacion',
+            'type'          => 'text_money',
+            'before_field'  => '$', // Replaces default '$'
+        ));
+    }
 }
