@@ -1,5 +1,12 @@
 <?php wp_footer(); ?>
 
+<?php 
+
+$avisoLegal         = esc_url(home_url('/') . 'aviso-legal');
+$politicaPrivacidad = esc_url(home_url('/') . 'politica-de-privacidad');
+
+?>
+
 <div class="continer-fluid">
     <div class="footer">
         <div class="col-12 logo-footer">
@@ -33,6 +40,13 @@
             <p>
                 Pruebas @ <?php echo date_i18n( 'Y' ); ?>
             </p>
+        </div>
+        
+        <div class="col-12" style="background-color: #323232;">
+            <div class="aviso-y-politica py-3" style="text-align: center;">
+                <a href="<?php echo $avisoLegal; ?>">Aviso Legal</a>&nbsp;
+                <span><a href="<?php echo $politiaPrivacidad ?>">Politica de privacidad</a></span>
+            </div>
         </div>
     </div>
 </div>

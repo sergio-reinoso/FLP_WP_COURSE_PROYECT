@@ -79,6 +79,15 @@ class ATR_Public {
             '4.0',
             'all'
         );
+
+        //Datepicker
+        wp_enqueue_style(
+            'datepicker',
+            ATR_DIR_URI . 'helpers/datepicker/css/bootstrap-datepicker.standalone.min.css',
+            array(),
+            '1.9.0',
+            'all'
+        );
     
     }
 
@@ -172,6 +181,22 @@ class ATR_Public {
             array(
                 'url' => admin_url('admin-ajax.php')
             )
+        );
+
+        //Datepicker
+        wp_enqueue_script(
+            'datepicker',
+            ATR_DIR_URI . 'helpers/datepicker/js/bootstrap-datepicker.min.js',
+            array('jquery'),
+            '1.9.0',
+            true
+        );
+        wp_enqueue_script(
+            'datepicker-locales',
+            ATR_DIR_URI . 'helpers/datepicker/locales/bootstrap-datepicker.es.min.js',
+            array('jquery'),
+            '1.9.0',
+            true
         );
     }
 

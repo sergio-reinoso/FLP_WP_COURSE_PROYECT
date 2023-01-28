@@ -421,4 +421,85 @@ p {
   width: 100%;
   height: 400px; }
 
+.container-reserva .col-contenido-reservas {
+  padding: 0px 20px; }
+  .container-reserva .col-contenido-reservas .fecha-reserva {
+    background-color: #1c1c1c;
+    color: #fff; }
+    .container-reserva .col-contenido-reservas .fecha-reserva h5 {
+      text-align: center;
+      padding-top: 20px; }
+    .container-reserva .col-contenido-reservas .fecha-reserva .check-in {
+      border: 1px solid #151515;
+      background-color: #151515;
+      margin: 0 0 0 30px; }
+    .container-reserva .col-contenido-reservas .fecha-reserva .check-out {
+      border: 1px solid #151515;
+      background-color: #151515;
+      margin: 0 30px 0 0; }
+    .container-reserva .col-contenido-reservas .fecha-reserva .texto-check {
+      color: #d1a684;
+      font-size: 12px;
+      text-align: center;
+      padding-bottom: 0px;
+      margin-top: 15px; }
+    .container-reserva .col-contenido-reservas .fecha-reserva .fecha-dia {
+      text-align: center;
+      font-size: 40px;
+      color: #d1a684;
+      font-family: 'Times New Roman', Times, serif !important;
+      margin-bottom: 0px; }
+    .container-reserva .col-contenido-reservas .fecha-reserva .mes {
+      text-align: center;
+      font-size: 12px;
+      color: #fff !important;
+      padding: 0 0;
+      margin: 0 0;
+      margin-bottom: 1px; }
+    .container-reserva .col-contenido-reservas .fecha-reserva .row-precio-total {
+      background: #151515;
+      color: #fff;
+      font-size: 2.5rem;
+      font-family: 'Times New Roman', Times, serif !important; }
+      .container-reserva .col-contenido-reservas .fecha-reserva .row-precio-total span {
+        font-size: 0.5em; }
+    .container-reserva .col-contenido-reservas .fecha-reserva .row-precio-total-total {
+      background: #1c1c1c; }
+
+.col-form-reservas .info-reserva h3 {
+  color: #ad8940; }
+.col-form-reservas .info-reserva hr {
+  border-bottom: 0.3px solid #817e7e;
+  height: 0px; }
+.col-form-reservas .row-cargando {
+  display: none;
+  background-color: rgba(212, 212, 212, 0.3); }
+.col-form-reservas .form-reservas hr {
+  border-bottom: 0.3px solid #817e7e;
+  height: 0px; }
+.col-form-reservas .form-reservas p {
+  margin: 0; }
+.col-form-reservas .form-reservas h3 {
+  color: #ad8940; }
+.col-form-reservas .form-reservas .styleForm input, .col-form-reservas .form-reservas .styleForm select, .col-form-reservas .form-reservas .styleForm textarea {
+  width: 100%;
+  border: 1px solid rgba(212, 212, 212, 0.8);
+  background-color: rgba(212, 212, 212, 0.3);
+  padding: 5px 0; }
+.col-form-reservas .form-reservas .styleForm label {
+  margin-bottom: 5px;
+  margin-top: 7px; }
+.col-form-reservas .form-reservas .date input {
+  position: relative; }
+.col-form-reservas .form-reservas .date span {
+  margin-left: -30px;
+  font-size: 20px; }
+.col-form-reservas .form-reservas .privacidad {
+  margin: 10px 0; }
+  .col-form-reservas .form-reservas .privacidad a {
+    text-decoration: none; }
+.col-form-reservas .form-reservas .boton-reserva {
+  display: flex;
+  justify-content: flex-start; }
+
 /*# sourceMappingURL=atr-public.css.map */

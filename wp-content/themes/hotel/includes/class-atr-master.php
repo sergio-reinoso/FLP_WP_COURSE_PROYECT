@@ -188,7 +188,7 @@ class ATR_Master {
         $this->cargador->add_action('after_setup_theme', $this->atr_ajax_contacto, 'atr_create_db_contacto');
         //Ajax form contacto
         $this->cargador->add_action('wp_ajax_atr_form_contacto', $this->atr_ajax_contacto, 'atr_form_contacto');
-        $this->cargador->add_action('wp_ajax_nopriv_atr_form_contacto', $this->atr_ajax_contacto, 'atr_form_contacto'); 
+        $this->cargador->add_action('wp_ajax_nopriv_atr_form_contacto', $this->atr_ajax_contacto, 'atr_form_contacto');
 
     }
 
