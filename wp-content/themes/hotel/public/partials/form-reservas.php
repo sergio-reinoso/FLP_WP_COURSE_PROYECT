@@ -69,7 +69,7 @@ $tipo = new WP_Query($args);
             Por favor elije la reserva de la habitacion antes de seleccionar
             la fecha de la reserva.
         </div>
-        <div class="row row-datosReserva">
+        <div class="row row-datosReserva" style="display: none">
             <div class="col-xl-6 col-lg-6 col-md-6 entrada styleForm date checkIn-date">
                 <label for="Entrada"><?php echo __('Check-In : ', 'hotel'); ?></label>
                 <input type="text" readonly name="entrada" id="entrada">
@@ -82,7 +82,7 @@ $tipo = new WP_Query($args);
             </div>
         </div>
 
-        <div class="paso3">
+        <div class="paso3" style="display: none">
             <h3 class="mt-4">
                 3. <?php echo __('Añade tu informacion', 'hotel'); ?> <i class="fas fa-user-check"></i>
             </h3>

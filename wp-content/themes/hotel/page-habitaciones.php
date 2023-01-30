@@ -111,8 +111,7 @@ $rooms = new WP_Query($args);
                             </div>
                         </div>
                     </div>
-                <?php endwhile;
-                wp_reset_postdata(); ?>
+                <?php endwhile; wp_reset_postdata(); ?>
 
             </div><!--/row habitaciones-->
 

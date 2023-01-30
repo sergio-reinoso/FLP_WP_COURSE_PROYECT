@@ -45,7 +45,7 @@ $politicaPrivacidad = esc_url(home_url('/') . 'politica-de-privacidad');
         <div class="col-12" style="background-color: #323232;">
             <div class="aviso-y-politica py-3" style="text-align: center;">
                 <a href="<?php echo $avisoLegal; ?>">Aviso Legal</a>&nbsp;
-                <span><a href="<?php echo $politiaPrivacidad ?>">Politica de privacidad</a></span>
+                <span><a href="<?php echo $politicaPrivacidad ?>">Politica de privacidad</a></span>
             </div>
         </div>
     </div>

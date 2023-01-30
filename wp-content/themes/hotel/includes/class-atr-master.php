@@ -87,6 +87,11 @@ class ATR_Master {
          * Cargaremos la clase para el ajax para el formulario dle contacto
          */
         require_once ATR_DIR_PATH . 'includes/class-atr-ajax-contacto.php';
+
+        /**
+         * Cargaremos la clase para el ajax para el formulario de reserva
+         */
+        require_once ATR_DIR_PATH . 'includes/class-atr-ajax-reservas.php';
         
 
     }
@@ -121,6 +126,7 @@ class ATR_Master {
         $this->atr_cmb2   	        = new ATR_CMB2;
         $this->atr_ajax_newsletter  = new ATR_AjaxNewsletter;
         $this->atr_ajax_contacto    = new ATR_AjaxContacto;
+        $this->atr_ajax_reservas    = new ATR_AjaxReservas;
 
         
     }
@@ -190,7 +196,15 @@ class ATR_Master {
         $this->cargador->add_action('wp_ajax_atr_form_contacto', $this->atr_ajax_contacto, 'atr_form_contacto');
         $this->cargador->add_action('wp_ajax_nopriv_atr_form_contacto', $this->atr_ajax_contacto, 'atr_form_contacto');
 
+        //DB tabla reservas
+        $this->cargador->add_action('after_setup_theme', $this->atr_ajax_reservas, 'atr_create_db_reservas');
+
+        //Ajax dias disabled
+        $this->cargador->add_action('wp_ajax_atr_diasDisabled', $this->atr_ajax_reservas, 'atr_diasDisabled');
+        $this->cargador->add_action('wp_ajax_nopriv_atr_diasDisabled', $this->atr_ajax_reservas, 'atr_diasDisabled');
+    
     }
+
 
     public function get_theme_name() {
         return $this->theme_name;

@@ -198,6 +198,16 @@ class ATR_Public {
             '1.9.0',
             true
         );
+
+        //Consultando dias no disponibles
+        wp_localize_script(
+            'public-js',
+            'atr_diasDisabled',
+            array(
+                'ajaxurl' => admin_url('admin-ajax.php')
+            )
+        );
+
     }
 
     /**
